@@ -17,16 +17,25 @@ public class Professor {
 
     @Id// define a variavel é uma chave primaria
     @GeneratedValue(strategy = GenerationType.IDENTITY)// define que o id é gerado automaticamente
-    @Column(name = "id")// define o nome da coluna
+    @Column(name = "idprofessor")// define o nome da coluna
     private Long idProfessor;
+
     private String name;
+
     private String CPF;
+
     private String RG;
+
     private String cellphoneNumber;
+
     @OneToOne
     @JoinColumn(name = "endereco_id")
     Endereco endereco;
-    List curso = new ArrayList<Curso>();
-    List agenda = new ArrayList<Agenda>();
+
+    @ManyToMany(mappedBy = "professorList")
+    List<Curso> curso;
+
+    @OneToMany(mappedBy = "professor")
+    List<Agenda> agenda;
 
 }

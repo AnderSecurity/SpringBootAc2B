@@ -3,6 +3,7 @@ package com.facens.ac2b.model.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
+import org.hibernate.annotations.ManyToAny;
 
 @Entity// define que é uma entidade do banco de dados
 @Getter// monta todos os getters da entidade
@@ -14,9 +15,17 @@ public class Endereco {
 
     @Id// define a variavel é uma chave primaria
     @GeneratedValue(strategy = GenerationType.IDENTITY)// define que o id é gerado automaticamente
-    @Column(name = "id")// define o nome da coluna
+    @Column(name = "idendereco")// define o nome da coluna
     private Long idEndereco;
+
     private String city;
+
     private String state;
+
     private String CEP;
+
+
+    @OneToMany(mappedBy = "endereco")
+    private Agenda agenda;
+
 }

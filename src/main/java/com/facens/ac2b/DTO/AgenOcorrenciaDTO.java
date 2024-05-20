@@ -2,13 +2,12 @@ package com.facens.ac2b.DTO;
 
 import lombok.*;
 
-@Builder
 @Getter
 @Setter
+@Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class ModelDTO {
-
-    //crie os campos que vai usar
-    private Long id;
+public class AgenOcorrenciaDTO {
+    private Long agendId;
+    private String ocorrencia;
 }

@@ -1,11 +1,13 @@
 package com.facens.ac2b.repository;
 
 import com.facens.ac2b.model.entity.Curso;
-import com.facens.ac2b.model.entity.Professor;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 
-import java.util.List;
 
 public interface CursoRepository extends JpaRepository<Curso, Long> {
-    List<Professor> findByCurso_IdCurso(Long idCurso);
+
+    @Query("Select c from Curso c left join fetch c.professorList where c.idCurso = :id")
+    Curso findAllowProf(@Param("id") Long id);
 }

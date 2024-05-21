@@ -1,5 +1,6 @@
-package com.facens.ac2b.DTO;
+package com.facens.ac2b.DTO.Agenda;
 
+import com.facens.ac2b.DTO.Curso.CursoDTO;
 import com.facens.ac2b.model.entity.Agenda;
 import lombok.*;
 

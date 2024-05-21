@@ -1,4 +1,4 @@
-package com.facens.ac2b.DTO;
+package com.facens.ac2b.DTO.Curso;
 
 import lombok.*;
 
@@ -8,6 +8,6 @@ import lombok.*;
 @NoArgsConstructor
 @AllArgsConstructor
 public class VincularCursoDTO {
-    private Long cursoId;
     private Long professorId;
+    private Long cursoId;
 }

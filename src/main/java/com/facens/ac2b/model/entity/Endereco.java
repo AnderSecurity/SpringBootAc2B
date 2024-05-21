@@ -5,6 +5,8 @@ import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.annotations.ManyToAny;
 
+import java.util.List;
+
 @Entity// define que é uma entidade do banco de dados
 @Getter// monta todos os getters da entidade
 @Setter// monta todos os setters da entidade
@@ -26,6 +28,6 @@ public class Endereco {
 
 
     @OneToMany(mappedBy = "endereco")
-    private Agenda agenda;
+    private List<Agenda> agenda;
 
 }

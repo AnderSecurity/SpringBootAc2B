@@ -28,7 +28,7 @@ public class Professor {
 
     private String cellphoneNumber;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.PERSIST)
     @JoinColumn(name = "endereco_id")
     Endereco endereco;
 

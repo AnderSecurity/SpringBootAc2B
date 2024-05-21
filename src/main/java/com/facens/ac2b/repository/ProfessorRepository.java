@@ -1,15 +1,18 @@
 package com.facens.ac2b.repository;
 
-import com.facens.ac2b.model.entity.Agenda;
+
 import com.facens.ac2b.model.entity.Professor;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 
-import java.time.LocalDate;
-import java.util.List;
 
 public interface ProfessorRepository extends JpaRepository<Professor, Long> {
 
-    Professor findByProfessor_IdProfessor(Long idProfessor);
+    @Query("Select p from Professor p left join fetch p.agenda where p.idProfessor = :id")
+    Professor findWithAgendaById(@Param("id") Long id);
 
-    Agenda findByIdAgendaAndProfessor_IdProfessor(Long idAgenda, Long idProfessor);
+    Professor findByIdProfessorAndAgenda_IdAgenda(Long idProfessor, Long idAgenda);
+
+
 }

@@ -1,5 +1,6 @@
-package com.facens.ac2b.DTO;
+package com.facens.ac2b.DTO.Professor;
 
+import com.facens.ac2b.DTO.Endereco.EnderecoDTO;
 import lombok.*;
 
 @Builder

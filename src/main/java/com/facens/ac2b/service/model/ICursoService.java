@@ -1,14 +1,14 @@
 package com.facens.ac2b.service.model;
 
-import com.facens.ac2b.DTO.CursoCadDTO;
-import com.facens.ac2b.DTO.ProfessorDTO;
-import com.facens.ac2b.DTO.VincularCursoDTO;
+import com.facens.ac2b.DTO.Curso.CursoAllowDTO;
+import com.facens.ac2b.DTO.Curso.CursoCadDTO;
+import com.facens.ac2b.DTO.Curso.VincularCursoDTO;
+import org.springframework.stereotype.Service;
 
-import java.util.List;
-
+@Service
 public interface ICursoService {
-    List<ProfessorDTO> findAllAllow(Long cursoId);
-    void create(CursoCadDTO cursoCadDTO);
+    CursoAllowDTO findAllAllow(Long cursoId);
+    Long create(CursoCadDTO cursoCadDTO);
 
     void vinculaProfessor(VincularCursoDTO ids);
 }

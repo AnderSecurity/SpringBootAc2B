@@ -20,7 +20,7 @@ public class Agenda {
     @Column(name = "idagenda")
     private Long idAgenda;
 
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name = "professorid")
     private Professor professor;
 
@@ -28,7 +28,7 @@ public class Agenda {
     @JoinColumn(name = "cursoid")
     private Curso curso;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.PERSIST)
     @JoinColumn(name = "enderecoid")
     private Endereco endereco;
 

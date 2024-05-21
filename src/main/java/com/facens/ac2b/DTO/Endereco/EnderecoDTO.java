@@ -1,4 +1,4 @@
-package com.facens.ac2b.DTO;
+package com.facens.ac2b.DTO.Endereco;
 
 import lombok.*;
 

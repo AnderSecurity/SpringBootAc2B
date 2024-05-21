@@ -1,13 +1,15 @@
 package com.facens.ac2b.service.model;
 
-import com.facens.ac2b.DTO.AgendaDTO;
-import com.facens.ac2b.DTO.ProfessorAgendaDTO;
-import com.facens.ac2b.DTO.ProfessorCadDTO;
+
+import com.facens.ac2b.DTO.Professor.ProfessorAgendaDTO;
+import com.facens.ac2b.DTO.Professor.ProfessorAgendaUniDTO;
+import com.facens.ac2b.DTO.Professor.ProfessorCadDTO;
+import org.springframework.stereotype.Service;
 
 
-
+@Service
 public interface IProfessorService {
-    void save(ProfessorCadDTO cadProf);
+    Long save(ProfessorCadDTO cadProf);
     ProfessorAgendaDTO findById(Long profId);
-    AgendaDTO findAgendaById(Long profId, Long agendaId);
+    ProfessorAgendaUniDTO findAgendaById(Long profId, Long agendaId);
 }

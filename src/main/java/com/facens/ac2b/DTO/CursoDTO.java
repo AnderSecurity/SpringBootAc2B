@@ -13,10 +13,14 @@ public class CursoDTO {
     private String cursoNome;
     private String description;
     private float cargaHoraria;
+    private String objetivos;
+    private String ementa;
 
     public CursoDTO(Curso entity){
         this.cursoNome = entity.getName();
         this.description = entity.getDescription();
         this.cargaHoraria = entity.getWorkLoad();
+        this.objetivos = entity.getObjectives();
+        this.ementa = entity.getEmenta();
     }
 }

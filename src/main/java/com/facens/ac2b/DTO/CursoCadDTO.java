@@ -10,10 +10,10 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 public class CursoCadDTO {
+    private String nome;
     private String descricao;
     private Float cargaHoraria;
     private String objetivos;
     private String ementa;
-    private List<String> professores;
 
 }

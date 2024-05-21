@@ -1,9 +1,6 @@
 package com.facens.ac2b.service.impl;
 
-import com.facens.ac2b.DTO.EnderecoDTO;
-import com.facens.ac2b.DTO.ProfessorAgendaDTO;
-import com.facens.ac2b.DTO.ProfessorCadDTO;
-import com.facens.ac2b.DTO.ProfessorDTO;
+import com.facens.ac2b.DTO.*;
 import com.facens.ac2b.model.entity.Endereco;
 import com.facens.ac2b.model.entity.Professor;
 import com.facens.ac2b.repository.ProfessorRepository;
@@ -35,6 +32,13 @@ public class ProfessorService implements IProfessorService {
 
     @Override
     public ProfessorAgendaDTO findById(Long profId) {
-        return professorRepository.findById(profId).map(ProfessorAgendaDTO::new).orElseThrow();
+        return new ProfessorAgendaDTO(professorRepository.findByProfessor_IdProfessor(profId));
     }
+
+    @Override
+    public AgendaDTO findAgendaById(Long profId, Long agendaId) {
+        return new AgendaDTO(professorRepository.findByIdAgendaAndProfessor_IdProfessor(agendaId, profId));
+    }
+
+
 }

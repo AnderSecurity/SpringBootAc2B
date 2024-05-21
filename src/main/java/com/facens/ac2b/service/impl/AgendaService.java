@@ -14,6 +14,7 @@ public class AgendaService implements IAgendaService{
     @Autowired
     private AgendaRepository agendaRepository;
 
+    @Override
     public Boolean verificaAgendaDisponivel(Long professorId, LocalDate date){
         return agendaRepository.existsByProfessor_IdProfessorAndDataInitGreaterThanEqualAndDataFimLessThanEqual(professorId, date, date);
     }

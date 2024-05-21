@@ -28,7 +28,7 @@ public class Curso {
 
     private String objectives;
 
-    private String menu;
+    private String ementa;
 
     @OneToMany(mappedBy = "curso")
     List<Agenda> agendList;
